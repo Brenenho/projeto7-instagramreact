@@ -67,10 +67,10 @@ function Post(props) {
 
 
     return (
-        <div class="post">
+        <div data-test="post" class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img src={props.imagemperfil} />
+                    <img data-test="post-image" src={props.imagemperfil} />
                     {props.texto}
                 </div>
                 <div class="acoes">
@@ -85,19 +85,19 @@ function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon onClick={coracaomudar} name={coracao} class={classe} ></ion-icon>
+                        <ion-icon data-test="like-post" onClick={coracaomudar} name={coracao} class={classe} ></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon onClick={salvar} name={salvo}></ion-icon>
+                        <ion-icon data-test="save-post" onClick={salvar} name={salvo}></ion-icon>
                     </div>
                 </div>
 
                 <div class="curtidas">
                     <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
                     <div class="texto">
-                        Curtido por <strong>adorable_animals</strong> e <strong>outras {curtidas} pessoas</strong>
+                        Curtido por <strong>adorable_animals</strong> e <strong data-test="likes-number">outras {curtidas} pessoas</strong>
                     </div>
                 </div>
             </div>

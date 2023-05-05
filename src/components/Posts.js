@@ -50,7 +50,13 @@ function Post(props) {
          
             setCoracao("heart")
             setClasse("vermelho")
-            setCurtidas("99.160")
+            let curtidanova = curtidas + 1
+            if (coracao === "heart-outline") {
+                setCurtidas(curtidanova)
+            }else{
+                setCurtidas(curtidas)
+            }
+            
         
         }
         

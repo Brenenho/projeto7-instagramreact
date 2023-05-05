@@ -25,8 +25,8 @@ export default function Posts() {
 function Post(props) {
 
     const [coracao, setCoracao] = React.useState("heart-outline")
-    const [classe, setClasse] = React.useState("vermelho")
-    const [curtidas, setCurtidas] = React.useState("99.159")
+    const [classe, setClasse] = React.useState("")
+    const [curtidas, setCurtidas] = React.useState(parseInt("99159"))
     const [salvo, setSalvo] = React.useState("bookmark-outline")
 
 
@@ -34,12 +34,13 @@ function Post(props) {
         if (coracao === "heart-outline") {
             setCoracao("heart")
             setClasse("vermelho")
-            setCurtidas("99.160")
+            let curtidanova = curtidas + 1
+            setCurtidas(curtidanova)
 
         }else {
             setCoracao("heart-outline")
             setClasse("")
-            setCurtidas("99.159")
+            setCurtidas(curtidas - 1)
         }
         
     

@@ -48,11 +48,12 @@ function Post(props) {
 
     function coracaomudarfoto() {
          
-            setCoracao("heart")
-            setClasse("vermelho")
-            let curtidanova = curtidas + 1
+            
+            let curtidanova = curtidas + 1;
             if (coracao === "heart-outline") {
                 setCurtidas(curtidanova)
+                setCoracao("heart")
+                setClasse("vermelho")
             }else{
                 setCurtidas(curtidas)
             }
@@ -77,7 +78,7 @@ function Post(props) {
         <div data-test="post" class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img data-test="post-image" src={props.imagemperfil} />
+                    <img  src={props.imagemperfil} />
                     {props.texto}
                 </div>
                 <div class="acoes">
@@ -86,7 +87,7 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img onClick={coracaomudarfoto} src={props.imagempost}  />
+                <img data-test="post-image" onClick={coracaomudarfoto} src={props.imagempost}  />
             </div>
 
             <div class="fundo">
